@@ -1,6 +1,6 @@
-# Sonata Classification Bundle
+# Sonata Classification Bundle for MongoDB
 
-Symfony SonataClassificationBundle
+Symfony SonataClassificationBundle, official bundle support only ORM even if there are documents for MongoDB.
 
 [![Latest Stable Version](https://poser.pugx.org/sonata-project/classification-bundle/v/stable)](https://packagist.org/packages/sonata-project/classification-bundle)
 [![Latest Unstable Version](https://poser.pugx.org/sonata-project/classification-bundle/v/unstable)](https://packagist.org/packages/sonata-project/classification-bundle)

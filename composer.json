@@ -1,7 +1,7 @@
 {
-    "name": "sonata-project/classification-bundle",
+    "name": "sonata-project/classification-mongodb-bundle",
     "type": "symfony-bundle",
-    "description": "Symfony SonataClassificationBundle",
+    "description": "Symfony SonataClassificationBundle for MongoDB",
     "keywords": [
         "category",
         "tag",
@@ -26,8 +26,7 @@
         "sonata-project/admin-bundle": "^3.31",
         "sonata-project/core-bundle": "^3.14",
         "sonata-project/datagrid-bundle": "^2.3",
-        "sonata-project/doctrine-extensions": "^1.5.1",
-        "sonata-project/doctrine-orm-admin-bundle": "^3.4",
+        "sonata-project/doctrine-mongodb-admin-bundle": "^3.3",
         "sonata-project/easy-extends-bundle": "^2.5",
         "symfony/config": "^3.4 || ^4.2",
         "symfony/console": "^3.4 || ^4.2",
@@ -53,7 +52,8 @@
     },
     "suggest": {
         "sonata-project/block-bundle": "For rendering dynamic list blocks on a page.",
-        "sonata-project/media-bundle": "For media management"
+        "sonata-project/media-bundle": "For media management",
+        "sonata-project/doctrine-orm-admin-bundle": "For doctrine ORM support"
     },
     "config": {
         "sort-packages": true
