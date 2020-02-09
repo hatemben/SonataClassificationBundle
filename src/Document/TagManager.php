@@ -18,26 +18,19 @@ use Sonata\Doctrine\Document\BaseDocumentManager;
 
 class TagManager extends BaseDocumentManager implements TagManagerInterface
 {
-    public function getPager(array $criteria, $page, $limit = 10, array $sort = [])
+    /**
+     * {@inheritdoc}
+     */
+    public function findTagBy(array $criteria = null, array $orderBy = null, $limit = null, $offset = null)
     {
-        $parameters = [];
+        return $this->repository->findBy($criteria, $orderBy, $limit, $offset);
+    }
 
-        $query = $this->getRepository()
-            ->createQueryBuilder('t')
-            ->select('t');
-
-        $criteria['enabled'] = $criteria['enabled'] ?? true;
-        $query->andWhere('t.enabled = :enabled');
-        $parameters['enabled'] = $criteria['enabled'];
-
-        $query->setParameters($parameters);
-
-        $pager = new Pager();
-        $pager->setMaxPerPage($limit);
-        $pager->setQuery(new ProxyQuery($query));
-        $pager->setPage($page);
-        $pager->init();
-
-        return $pager;
+    /**
+     * {@inheritdoc}
+     */
+    public function getPager(array $criteria, $page, $limit = 10, array $sort = []): void
+    {
+        new \RuntimeException('method not implemented');
     }
 }

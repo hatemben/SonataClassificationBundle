@@ -6,7 +6,7 @@
             <argument type="service" id="jms_serializer.metadata_factory"/>
             <argument type="service" id="doctrine"/>
             <argument>sonata_classification_api_form_category</argument>
-            <argument>%sonata.classification.admin.category.entity%</argument>
+            <argument>%sonata.classification.admin.category.document%</argument>
             <argument>sonata_api_write</argument>
         </service>
         <service id="sonata.classification.api.form.type.collection" class="Sonata\ClassificationBundle\Form\Type\ApiCollectionType">
@@ -14,7 +14,7 @@
             <argument type="service" id="jms_serializer.metadata_factory"/>
             <argument type="service" id="doctrine"/>
             <argument>sonata_classification_api_form_collection</argument>
-            <argument>%sonata.classification.admin.collection.entity%</argument>
+            <argument>%sonata.classification.admin.collection.document%</argument>
             <argument>sonata_api_write</argument>
         </service>
         <service id="sonata.classification.api.form.type.tag" class="Sonata\ClassificationBundle\Form\Type\ApiTagType">
@@ -22,7 +22,7 @@
             <argument type="service" id="jms_serializer.metadata_factory"/>
             <argument type="service" id="doctrine"/>
             <argument>sonata_classification_api_form_tag</argument>
-            <argument>%sonata.classification.admin.tag.entity%</argument>
+            <argument>%sonata.classification.admin.tag.document%</argument>
             <argument>sonata_api_write</argument>
         </service>
         <service id="sonata.classification.api.form.type.context" class="Sonata\ClassificationBundle\Form\Type\ApiContextType">
@@ -30,7 +30,7 @@
             <argument type="service" id="jms_serializer.metadata_factory"/>
             <argument type="service" id="doctrine"/>
             <argument>sonata_classification_api_form_context</argument>
-            <argument>%sonata.classification.admin.context.entity%</argument>
+            <argument>%sonata.classification.admin.context.document%</argument>
             <argument>sonata_api_write</argument>
             <argument>true</argument>
         </service>

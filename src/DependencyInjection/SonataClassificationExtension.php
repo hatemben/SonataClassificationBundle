@@ -63,16 +63,16 @@ class SonataClassificationExtension extends Extension
     public function configureClass($config, ContainerBuilder $container)
     {
         // admin configuration
-        $container->setParameter('sonata.classification.admin.tag.entity', $config['class']['tag']);
-        $container->setParameter('sonata.classification.admin.category.entity', $config['class']['category']);
-        $container->setParameter('sonata.classification.admin.collection.entity', $config['class']['collection']);
-        $container->setParameter('sonata.classification.admin.context.entity', $config['class']['context']);
+        $container->setParameter('sonata.classification.admin.tag.document', $config['class']['tag']);
+        $container->setParameter('sonata.classification.admin.category.document', $config['class']['category']);
+        $container->setParameter('sonata.classification.admin.collection.document', $config['class']['collection']);
+        $container->setParameter('sonata.classification.admin.context.document', $config['class']['context']);
 
         // manager configuration
-        $container->setParameter('sonata.classification.manager.tag.entity', $config['class']['tag']);
-        $container->setParameter('sonata.classification.manager.category.entity', $config['class']['category']);
-        $container->setParameter('sonata.classification.manager.collection.entity', $config['class']['collection']);
-        $container->setParameter('sonata.classification.manager.context.entity', $config['class']['context']);
+        $container->setParameter('sonata.classification.manager.tag.document', $config['class']['tag']);
+        $container->setParameter('sonata.classification.manager.category.document', $config['class']['category']);
+        $container->setParameter('sonata.classification.manager.collection.document', $config['class']['collection']);
+        $container->setParameter('sonata.classification.manager.context.document', $config['class']['context']);
     }
 
     /**

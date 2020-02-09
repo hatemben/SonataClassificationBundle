@@ -13,6 +13,7 @@ declare(strict_types=1);
 
 namespace Sonata\ClassificationBundle\Document;
 
+use App\Application\Sonata\ClassificationBundle\Document\Context;
 use Sonata\ClassificationBundle\Model\CategoryManagerInterface;
 use Sonata\DatagridBundle\Pager\Doctrine\Pager;
 use Sonata\DatagridBundle\ProxyQuery\Doctrine\ProxyQuery;
@@ -20,26 +21,26 @@ use Sonata\Doctrine\Document\BaseDocumentManager;
 
 class CategoryManager extends BaseDocumentManager implements CategoryManagerInterface
 {
-    public function getPager(array $criteria, $page, $limit = 10, array $sort = [])
+    /**
+     * {@inheritdoc}
+     */
+    public function findCategoryBy(array $criteria = null, array $orderBy = null, $limit = null, $offset = null)
     {
-        $parameters = [];
+        return $this->repository->findBy($criteria, $orderBy, $limit, $offset);
+    }
 
-        $query = $this->getRepository()
-            ->createQueryBuilder('c')
-            ->select('c');
+    /**
+     * {@inheritdoc}
+     */
+    public function getPager(array $criteria, $page, $limit = 10, array $sort = []): void
+    {
+        new \RuntimeException('method not implemented');
+    }
 
-        $criteria['enabled'] = $criteria['enabled'] ?? true;
-        $query->andWhere('c.enabled = :enabled');
-        $parameters['enabled'] = $criteria['enabled'];
-
-        $query->setParameters($parameters);
-
-        $pager = new Pager();
-        $pager->setMaxPerPage($limit);
-        $pager->setQuery(new ProxyQuery($query));
-        $pager->setPage($page);
-        $pager->init();
-
-        return $pager;
+    /**
+     * @param Context $context|false
+     */
+    public function getRootCategoriesSplitByContexts($context){
+        return [];
     }
 }

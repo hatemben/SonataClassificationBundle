@@ -13,17 +13,17 @@ declare(strict_types=1);
 
 namespace Sonata\ClassificationBundle\Document;
 
-use Sonata\ClassificationBundle\Model\CollectionManagerInterface;
+use Sonata\ClassificationBundle\Model\ContextManagerInterface;
 use Sonata\DatagridBundle\Pager\Doctrine\Pager;
 use Sonata\DatagridBundle\ProxyQuery\Doctrine\ProxyQuery;
-use Sonata\Doctrine\Document\BaseDocumentManager;
+use Sonata\Doctrine\Entity\BaseEntityManager;
 
-class CollectionManager extends BaseDocumentManager implements CollectionManagerInterface
+class ContextManager extends BaseEntityManager implements ContextManagerInterface
 {
     /**
      * {@inheritdoc}
      */
-    public function findCollectionBy(array $criteria = null, array $orderBy = null, $limit = null, $offset = null)
+    public function findContextBy(array $criteria = null, array $orderBy = null, $limit = null, $offset = null)
     {
         return $this->repository->findBy($criteria, $orderBy, $limit, $offset);
     }
