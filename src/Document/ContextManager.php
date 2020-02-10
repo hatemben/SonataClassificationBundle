@@ -16,9 +16,9 @@ namespace Sonata\ClassificationBundle\Document;
 use Sonata\ClassificationBundle\Model\ContextManagerInterface;
 use Sonata\DatagridBundle\Pager\Doctrine\Pager;
 use Sonata\DatagridBundle\ProxyQuery\Doctrine\ProxyQuery;
-use Sonata\Doctrine\Entity\BaseEntityManager;
+use Sonata\Doctrine\Document\BaseDocumentManager;
 
-class ContextManager extends BaseEntityManager implements ContextManagerInterface
+class ContextManager extends BaseDocumentManager implements ContextManagerInterface
 {
     /**
      * {@inheritdoc}

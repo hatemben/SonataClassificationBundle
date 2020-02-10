@@ -17,4 +17,10 @@ use Sonata\ClassificationBundle\Model\Category as ModelCategory;
 
 class BaseCategory extends ModelCategory
 {
+    public function disableChildrenLazyLoading()
+    {
+        if ($this->children instanceof PersistentCollection) {
+            $this->children->setInitialized(true);
+        }
+    }
 }
