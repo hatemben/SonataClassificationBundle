@@ -53,9 +53,7 @@ class TagAdmin extends ContextAwareAdmin
         $listMapper
             ->addIdentifier('name')
             ->add('slug')
-            ->add('context', null, [
-                'sortable' => 'context.name',
-            ])
+            ->add('context')
             ->add('enabled', null, ['editable' => true])
             ->add('createdAt')
             ->add('updatedAt')

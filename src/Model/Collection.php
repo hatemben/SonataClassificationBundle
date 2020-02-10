@@ -20,6 +20,11 @@ abstract class Collection implements CollectionInterface
     /**
      * @var string
      */
+    protected $id;
+
+    /**
+     * @var string
+     */
     protected $name;
 
     /**
@@ -159,5 +164,10 @@ abstract class Collection implements CollectionInterface
     public function getContext()
     {
         return $this->context;
+    }
+
+    public function getId()
+    {
+        return $this->id;
     }
 }

@@ -15,7 +15,7 @@ namespace Sonata\ClassificationBundle\Admin;
 
 use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
-use Sonata\ClassificationBundle\Model\ContextInterface;
+use Sonata\ClassificationBundle\Document\ContextManager;
 use Sonata\ClassificationBundle\Model\ContextManagerInterface;
 
 abstract class ContextAwareAdmin extends AbstractAdmin
@@ -30,7 +30,7 @@ abstract class ContextAwareAdmin extends AbstractAdmin
      * @param string $class
      * @param string $baseControllerName
      */
-    public function __construct($code, $class, $baseControllerName, ContextManagerInterface $contextManager)
+    public function __construct($code, $class, $baseControllerName, ContextManager $contextManager)
     {
         parent::__construct($code, $class, $baseControllerName);
 

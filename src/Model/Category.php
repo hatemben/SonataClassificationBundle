@@ -22,6 +22,11 @@ abstract class Category implements CategoryInterface
     /**
      * @var string
      */
+    protected $id;
+
+    /**
+     * @var string
+     */
     protected $name;
 
     /**
@@ -259,5 +264,9 @@ abstract class Category implements CategoryInterface
     public function getContext()
     {
         return $this->context;
+    }
+
+    public function getId(){
+        return $this->id;
     }
 }

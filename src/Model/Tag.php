@@ -20,6 +20,11 @@ abstract class Tag implements TagInterface
     /**
      * @var string
      */
+    protected $id;
+
+    /**
+     * @var string
+     */
     protected $name;
 
     /**
@@ -137,5 +142,9 @@ abstract class Tag implements TagInterface
     public function getContext()
     {
         return $this->context;
+    }
+
+    public function getId(){
+        return $this->id;
     }
 }

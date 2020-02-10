@@ -41,6 +41,14 @@ class CategoryManager extends BaseDocumentManager implements CategoryManagerInte
      * @param Context $context|false
      */
     public function getRootCategoriesSplitByContexts($context){
-        return [];
+        return $this->findBy(['context'=>$context]);
+    }
+
+    public function getAllRootCategories(){
+        return $this->findAll();
+    }
+
+    public function getRootCategoriesForContext($context){
+        return $this->findBy(['context'=>$context]);
     }
 }

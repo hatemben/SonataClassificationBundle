@@ -19,6 +19,7 @@ use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Form\Type\ModelListType;
 use Sonata\AdminBundle\Route\RouteCollection;
 use Sonata\ClassificationBundle\Form\Type\CategorySelectorType;
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Sonata\MediaBundle\Model\MediaInterface;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
@@ -65,8 +66,8 @@ EOT
                     'required' => false,
                 ])
         ;
-
         if ($this->hasSubject()) {
+
             if (null !== $this->getSubject()->getParent() || null === $this->getSubject()->getId()) { // root category cannot have a parent
                 $formMapper
                     ->add('parent', CategorySelectorType::class, [
@@ -92,6 +93,7 @@ EOT
                     'required' => false,
                     'data' => $position,
                 ])
+                ->add('context')
             ->end()
         ;
 
@@ -124,16 +126,12 @@ EOT
     {
         $listMapper
             ->addIdentifier('name')
-            ->add('context', null, [
-                'sortable' => 'context.name',
-            ])
+            ->add('context')
             ->add('slug')
             ->add('description')
             ->add('enabled', null, ['editable' => true])
             ->add('position')
-            ->add('parent', null, [
-                'sortable' => 'parent.name',
-            ])
+            ->add('parent')
         ;
     }
 }

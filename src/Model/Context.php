@@ -89,4 +89,13 @@ abstract class Context implements ContextInterface
     {
         $this->setUpdatedAt(new \DateTime());
     }
+
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    public function setId($id){
+        $this->id;
+    }
 }
