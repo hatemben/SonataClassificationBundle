@@ -97,6 +97,10 @@ class SonataClassificationExtension extends Extension
         $container->setParameter('sonata.classification.admin.context.translation_domain', $config['admin']['context']['translation']);
     }
 
+    /**
+     *
+     * @TODO associations need to be reviewed for mongodb (addAssociation)
+     */
     public function registerDoctrineMapping(array $config)
     {
         foreach ($config['class'] as $type => $class) {
