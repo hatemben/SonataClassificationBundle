@@ -46,20 +46,6 @@ interface ContextInterface
     public function getEnabled();
 
     /**
-     * Set id.
-     *
-     * @param string $id
-     */
-    public function setId($id);
-
-    /**
-     * Get id.
-     *
-     * @return string $id
-     */
-    public function getId();
-
-    /**
      * Set created_at.
      *
      * @param \DateTime $createdAt

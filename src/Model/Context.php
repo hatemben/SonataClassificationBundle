@@ -19,7 +19,7 @@ abstract class Context implements ContextInterface
      * @var string
      */
     protected $id;
-
+    
     /**
      * @var string
      */
@@ -88,15 +88,5 @@ abstract class Context implements ContextInterface
     public function preUpdate()
     {
         $this->setUpdatedAt(new \DateTime());
-    }
-
-    public function setId($id)
-    {
-        $this->id = $id;
-    }
-
-    public function getId()
-    {
-        return $this->id;
     }
 }
