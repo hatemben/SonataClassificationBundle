@@ -4,7 +4,7 @@
         <service id="sonata.classification.api.form.type.category" class="Sonata\ClassificationBundle\Form\Type\ApiCategoryType">
             <tag name="form.type" alias="sonata_classification_api_form_category"/>
             <argument type="service" id="jms_serializer.metadata_factory"/>
-            <argument type="service" id="doctrine"/>
+            <argument type="service" id="doctrine_mongodb"/>
             <argument>sonata_classification_api_form_category</argument>
             <argument>%sonata.classification.admin.category.document%</argument>
             <argument>sonata_api_write</argument>
@@ -12,7 +12,7 @@
         <service id="sonata.classification.api.form.type.collection" class="Sonata\ClassificationBundle\Form\Type\ApiCollectionType">
             <tag name="form.type" alias="sonata_classification_api_form_collection"/>
             <argument type="service" id="jms_serializer.metadata_factory"/>
-            <argument type="service" id="doctrine"/>
+            <argument type="service" id="doctrine_mongodb"/>
             <argument>sonata_classification_api_form_collection</argument>
             <argument>%sonata.classification.admin.collection.document%</argument>
             <argument>sonata_api_write</argument>
@@ -20,7 +20,7 @@
         <service id="sonata.classification.api.form.type.tag" class="Sonata\ClassificationBundle\Form\Type\ApiTagType">
             <tag name="form.type" alias="sonata_classification_api_form_tag"/>
             <argument type="service" id="jms_serializer.metadata_factory"/>
-            <argument type="service" id="doctrine"/>
+            <argument type="service" id="doctrine_mongodb"/>
             <argument>sonata_classification_api_form_tag</argument>
             <argument>%sonata.classification.admin.tag.document%</argument>
             <argument>sonata_api_write</argument>
@@ -28,7 +28,7 @@
         <service id="sonata.classification.api.form.type.context" class="Sonata\ClassificationBundle\Form\Type\ApiContextType">
             <tag name="form.type" alias="sonata_classification_api_form_context"/>
             <argument type="service" id="jms_serializer.metadata_factory"/>
-            <argument type="service" id="doctrine"/>
+            <argument type="service" id="doctrine_mongodb"/>
             <argument>sonata_classification_api_form_context</argument>
             <argument>%sonata.classification.admin.context.document%</argument>
             <argument>sonata_api_write</argument>
