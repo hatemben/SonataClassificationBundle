@@ -84,7 +84,7 @@ class CategorySelectorType extends AbstractType
 
             $this->childWalker($category, $options, $choices);
         }
-
+        $choices = array(''=>' ')+$choices;
         return $choices;
     }
 
