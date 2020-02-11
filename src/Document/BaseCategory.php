@@ -15,7 +15,7 @@ namespace Sonata\ClassificationBundle\Document;
 
 use Sonata\ClassificationBundle\Model\Category as ModelCategory;
 
-class BaseCategory extends ModelCategory
+abstract class BaseCategory extends ModelCategory
 {
     public function disableChildrenLazyLoading()
     {
@@ -23,4 +23,5 @@ class BaseCategory extends ModelCategory
             $this->children->setInitialized(true);
         }
     }
+
 }
