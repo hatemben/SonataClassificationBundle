@@ -30,4 +30,6 @@ Now you can create default context manually or with command line :
 
     ./bin/console sonata:classification:fix-context
 
+Notice that Sonata\DoctrineMongoDBAdminBundle\Filter\
+
 And your app is ready to go !
