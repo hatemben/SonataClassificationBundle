@@ -1,4 +1,5 @@
-# Sonata Classification Bundle for MongoDB
+Sonata Classification Bundle for MongoDB
+========================================
 
 Installation using composer
 ---------------------------

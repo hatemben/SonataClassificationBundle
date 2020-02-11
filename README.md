@@ -17,7 +17,8 @@ master | [![Build Status][travis_unstable_badge]][travis_unstable_link] | [![Cov
 
 ## Documentation
 
-Non official documentation for the mongodb bundle [available here](Resources/doc/index.rst).
+Non official documentation for the mongodb bundle [available here](src/Resources/doc/index.rst).
+
 Check out the official documentation on the [official website](https://sonata-project.org/bundles/classification).
 
 ## Support
