@@ -127,8 +127,6 @@ EOT
         $listMapper
             ->addIdentifier('name')
             ->add('context')
-            ->add('slug')
-            ->add('description')
             ->add('enabled', null, ['editable' => true])
             ->add('position')
             ->add('parent')
