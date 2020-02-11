@@ -19,5 +19,16 @@ class Category extends BaseCategory
      * @MongoDB\ReferenceOne(targetDocument="App\Application\Sonata\ClassificationBundle\Document\Context")
      */
     protected $context;
+    
+    /**
+     * @MongoDB\ReferenceOne(targetDocument=Category::class)
+     * @MongoDB\Index
+     */
+    protected $parent;
 
+    /**
+     * @MongoDB\ReferenceMany(targetDocument=Category::class)
+     * @MongoDB\Index
+     */
+    protected $children;
 }
