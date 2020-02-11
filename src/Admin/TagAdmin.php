@@ -52,11 +52,8 @@ class TagAdmin extends ContextAwareAdmin
     {
         $listMapper
             ->addIdentifier('name')
-            ->add('slug')
             ->add('context')
             ->add('enabled', null, ['editable' => true])
-            ->add('createdAt')
-            ->add('updatedAt')
         ;
     }
 }

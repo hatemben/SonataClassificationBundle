@@ -90,7 +90,6 @@ EOT
     {
         $listMapper
             ->addIdentifier('name')
-            ->add('slug')
             ->add('context')
             ->add('enabled', null, [
                 'editable' => true,
