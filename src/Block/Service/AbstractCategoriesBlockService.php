@@ -44,14 +44,33 @@ abstract class AbstractCategoriesBlockService extends AbstractClassificationBloc
     private $categoryAdmin;
 
     /**
-     * @param string $name
+     * @param string|Environment                               $twigOrDeprecatedName
+     * @param EngineInterface|ContextManagerInterface          $contextManagerOrDeprecatedTemplating
+     * @param ContextManagerInterface|CategoryManagerInterface $categoryManagerOrDeprecatedContextManager
+     * @param CategoryManagerInterface|AdminInterface          $categoryAdminOrDeprecatedCategoryManager
+     * @param AdminInterface|null                              $deprecatedCategoryAdmin
      */
-    public function __construct($name, EngineInterface $templating, ContextManagerInterface $contextManager, CategoryManagerInterface $categoryManager, AdminInterface $categoryAdmin)
+    public function __construct($twigOrDeprecatedName, $contextManagerOrDeprecatedTemplating, $categoryManagerOrDeprecatedContextManager, $categoryAdminOrDeprecatedCategoryManager, $deprecatedCategoryAdmin)
     {
-        parent::__construct($name, $templating, $contextManager);
+        // NEXT_MAJOR: remove the if block
+        if (\is_string($twigOrDeprecatedName)) {
+            parent::__construct(
+                $twigOrDeprecatedName,
+                $contextManagerOrDeprecatedTemplating,
+                $categoryManagerOrDeprecatedContextManager
+            );
 
-        $this->categoryManager = $categoryManager;
-        $this->categoryAdmin = $categoryAdmin;
+            $this->categoryManager = $categoryAdminOrDeprecatedCategoryManager;
+            $this->categoryAdmin = $deprecatedCategoryAdmin;
+        } else {
+            parent::__construct(
+                $twigOrDeprecatedName,
+                $contextManagerOrDeprecatedTemplating
+            );
+
+            $this->categoryManager = $categoryManagerOrDeprecatedContextManager;
+            $this->categoryAdmin = $categoryAdminOrDeprecatedCategoryManager;
+        }
     }
 
     public function execute(BlockContextInterface $blockContext, Response $response = null)

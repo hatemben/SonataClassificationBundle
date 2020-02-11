@@ -44,14 +44,35 @@ abstract class AbstractCollectionsBlockService extends AbstractClassificationBlo
     private $collectionAdmin;
 
     /**
-     * @param string $name
+     * AbstractCollectionsBlockService constructor.
+     *
+     * @param string|Environment                                 $twigOrDeprecatedName
+     * @param EngineInterface|ContextManagerInterface            $contextManagerOrDeprecatedTemplating
+     * @param ContextManagerInterface|CollectionManagerInterface $collectionManagerOrDeprecatedContextManager
+     * @param CollectionManagerInterface|AdminInterface          $collectionManagerOrcollectionAdminOrDeprecatedTagManager
+     * @param AdminInterface|null                                $collectionAdmin
      */
-    public function __construct($name, EngineInterface $templating, ContextManagerInterface $contextManager, CollectionManagerInterface $collectionManager, AdminInterface $collectionAdmin)
+    public function __construct($twigOrDeprecatedName, $contextManagerOrDeprecatedTemplating, $collectionManagerOrDeprecatedContextManager, $collectionManagerOrcollectionAdminOrDeprecatedTagManager, $collectionAdmin)
     {
-        parent::__construct($name, $templating, $contextManager);
+        // NEXT_MAJOR: remove the if block
+        if (\is_string($twigOrDeprecatedName)) {
+            parent::__construct(
+                $twigOrDeprecatedName,
+                $contextManagerOrDeprecatedTemplating,
+                $collectionManagerOrDeprecatedContextManager
+            );
 
-        $this->collectionManager = $collectionManager;
-        $this->collectionAdmin = $collectionAdmin;
+            $this->collectionManager = $collectionManagerOrcollectionAdminOrDeprecatedTagManager;
+            $this->collectionAdmin = $collectionAdmin;
+        } else {
+            parent::__construct(
+                $twigOrDeprecatedName,
+                $contextManagerOrDeprecatedTemplating
+            );
+
+            $this->collectionManager = $collectionManagerOrDeprecatedContextManager;
+            $this->collectionAdmin = $collectionManagerOrcollectionAdminOrDeprecatedTagManager;
+        }
     }
 
     public function execute(BlockContextInterface $blockContext, Response $response = null)
