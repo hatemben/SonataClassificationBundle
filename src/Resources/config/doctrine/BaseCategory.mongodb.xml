@@ -8,6 +8,7 @@
         <field name="enabled" type="boolean" field-name="enabled"/>
         <field name="slug" type="string" field-name="slug"/>
         <field name="description" type="string" field-name="description"/>
+        <field name="position" type="int" field-name="position"/>
         <field name="createdAt" type="date" field-name="createdAt"/>
         <field name="updatedAt" type="date" field-name="updatedAt"/>
         <lifecycle-callbacks>
