@@ -96,6 +96,6 @@ abstract class Context implements ContextInterface
     }
 
     public function setId($id){
-        $this->id;
+        $this->id = $id;
     }
 }
